@@ -14,10 +14,14 @@ const prisma = new PrismaClient({ adapter })
 const app = express()
 app.use(express.json())
 
-app.get('/products', async (req, res) => {
+app.get("/", (req, res) => {
+  res.json({mensagem : "operação realizada com sucesso"})
+})
+
+app.get('/produtos', async (req, res) => {
   try {
-    const products = await prisma.product.findMany()
-    res.json(products)
+    const produtos = await prisma.produto.findMany()
+    res.json(produtos)
   } catch (error) {
     console.error(error)
     res.status(500).json({ error: 'Erro ao buscar produtos' })
