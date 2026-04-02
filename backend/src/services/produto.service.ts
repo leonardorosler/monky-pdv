@@ -1,7 +1,11 @@
 import { prisma } from '../prisma.js'
 
-export async function listarProdutos() {
-  return prisma.produto.findMany()
+export async function listarProdutos(nome?: string) {
+  return prisma.produto.findMany({
+    where: nome ? {
+      nome: { contains: nome, mode: 'insensitive' } // busca parcial, ignora maiúsculas
+    } : undefined
+  })
 }
 
 export async function buscarProduto(id: number) {

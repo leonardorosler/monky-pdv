@@ -2,7 +2,8 @@ import { Request, Response } from 'express'
 import * as ProdutoService from '../services/produto.service.js'
 
 export async function listar(req: Request, res: Response) {
-  const produtos = await ProdutoService.listarProdutos()
+  const nome = req.query.nome as string | undefined
+  const produtos = await ProdutoService.listarProdutos(nome)
   res.json(produtos)
 }
 
