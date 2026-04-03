@@ -1,0 +1,70 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.body {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.venda {
+  border: 0.5px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.vendaHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  cursor: pointer;
+  background: var(--bg-elevated);
+  transition: background 0.15s;
+}
+
+.vendaHeader:hover { background: var(--bg-hover); }
+
+.vendaId { font-size: 12px; color: var(--text-hint); }
+.vendaData { font-size: 13px; color: var(--text-primary); }
+
+.vendaRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.vendaCliente { font-size: 12px; color: var(--text-muted); }
+.vendaTotal { font-size: 14px; font-weight: 500; color: var(--accent); }
+
+.vendaItens {
+  padding: 0 16px 12px;
+  background: var(--bg-surface);
+}
+
+.itensTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+.itensTable th {
+  text-align: left;
+  color: var(--text-hint);
+  font-weight: 500;
+  padding: 4px 8px;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.itensTable td {
+  padding: 7px 8px;
+  color: var(--text-primary);
+  border-bottom: 0.5px solid var(--border);
+}
+
+.vazia { font-size: 13px; color: var(--text-hint); text-align: center; margin-top: 48px; }

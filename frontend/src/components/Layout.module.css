@@ -1,0 +1,69 @@
+.shell {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 180px;
+  background: var(--bg-surface);
+  border-right: 0.5px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0;
+  flex-shrink: 0;
+}
+
+.logo {
+  padding: 0 16px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: 0.3px;
+}
+
+.logo span {
+  display: block;
+  font-size: 11px;
+  color: var(--accent);
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  font-size: 13px;
+  color: var(--text-muted);
+  border-left: 2px solid transparent;
+  transition: color 0.15s, background 0.15s;
+  cursor: pointer;
+}
+
+.navItem:hover {
+  color: var(--text-primary);
+  background: var(--bg-elevated);
+}
+
+.active {
+  color: var(--text-primary);
+  background: var(--bg-elevated);
+  border-left-color: var(--accent);
+}
+
+.navIcon {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.active .navIcon {
+  opacity: 1;
+}
+
+.main {
+  flex: 1;
+  overflow-y: auto;
+  background: var(--bg-base);
+}

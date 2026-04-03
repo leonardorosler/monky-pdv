@@ -1,0 +1,260 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.searchInput {
+  width: 280px;
+  background: var(--bg-elevated);
+  border: 0.5px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 12px;
+  color: var(--text-primary);
+  outline: none;
+}
+
+.searchInput:focus {
+  border-color: var(--border-hover);
+}
+
+.searchInput::placeholder {
+  color: var(--text-hint);
+}
+
+.body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.left {
+  flex: 1;
+  padding: 20px 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.section {}
+
+.sectionLabel {
+  font-size: 11px;
+  color: var(--text-hint);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 8px;
+}
+
+.resultList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.resultItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-elevated);
+  border: 0.5px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.resultItem:hover {
+  border-color: var(--border-hover);
+}
+
+.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.resultNome {
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.resultEstoque {
+  font-size: 11px;
+  color: var(--text-hint);
+  margin-top: 2px;
+}
+
+.resultEstoque.low {
+  color: var(--danger);
+}
+
+.resultPreco {
+  font-size: 13px;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.mensagem {
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.mensagemSucesso {
+  background: #0a2e22;
+  color: var(--accent);
+  border: 0.5px solid #1a5c3a;
+}
+
+.mensagemErro {
+  background: #2e0a0a;
+  color: var(--danger);
+  border: 0.5px solid #5c1a1a;
+}
+
+.cart {
+  width: 248px;
+  background: var(--bg-surface);
+  border-left: 0.5px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+
+.cartHeader {
+  padding: 14px 16px;
+  border-bottom: 0.5px solid var(--border);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cartBadge {
+  background: var(--accent);
+  color: var(--accent-dark);
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 1px 7px;
+}
+
+.cartItems {
+  flex: 1;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+}
+
+.cartVazio {
+  font-size: 12px;
+  color: var(--text-hint);
+  text-align: center;
+  margin-top: 24px;
+}
+
+.cartItem {
+  background: var(--bg-elevated);
+  border-radius: 6px;
+  padding: 10px 12px;
+}
+
+.cartItemNome {
+  font-size: 12px;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.cartItemControls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.qtyControls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.qtyBtn {
+  width: 22px;
+  height: 22px;
+  background: var(--bg-hover);
+  border: 0.5px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-muted);
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.qtyBtn:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+}
+
+.qtyVal {
+  font-size: 13px;
+  color: var(--text-primary);
+  min-width: 18px;
+  text-align: center;
+}
+
+.cartSubtotal {
+  font-size: 12px;
+  color: var(--accent);
+}
+
+.cartFooter {
+  padding: 14px 16px;
+  border-top: 0.5px solid var(--border);
+}
+
+.cartTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+
+.cartTotal span:first-child {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.cartTotal span:last-child {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.btnFinalizar {
+  width: 100%;
+  background: var(--accent);
+  border: none;
+  border-radius: 6px;
+  padding: 9px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent-dark);
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.btnFinalizar:hover {
+  opacity: 0.9;
+}
+
+.btnFinalizar:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
