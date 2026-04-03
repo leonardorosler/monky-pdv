@@ -25,14 +25,16 @@ model Cliente {
 }
 
 model Venda {
-  id        Int        @id @default(autoincrement())
-  total     Float
-  criadoEm  DateTime   @default(now())
+  id            Int        @id @default(autoincrement())
+  total         Float
+  desconto      Float      @default(0)
+  formaPagamento String    @default("dinheiro")
+  criadoEm     DateTime   @default(now())
 
-  cliente   Cliente?   @relation(fields: [clienteId], references: [id])
-  clienteId Int?
+  cliente      Cliente?   @relation(fields: [clienteId], references: [id])
+  clienteId    Int?
 
-  itens     ItemVenda[]
+  itens        ItemVenda[]
 }
 
 model ItemVenda {
