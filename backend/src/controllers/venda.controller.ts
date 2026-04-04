@@ -13,7 +13,16 @@ export async function buscar(req: Request, res: Response) {
 }
 
 export async function criar(req: Request, res: Response) {
-  const { itens, clienteId } = req.body
-  const venda = await VendaService.criarVenda(itens, clienteId)
+  const { itens, formaPagamento, clienteId } = req.body
+  const venda = await VendaService.criarVenda(itens, formaPagamento ?? 'dinheiro', clienteId)
   res.status(201).json(venda)
+}
+
+export async function dashboard(req: Request, res: Response) {
+  const [resumo, maisVendidos, faturamento] = await Promise.all([
+    VendaService.resumoHoje(),
+    VendaService.produtosMaisVendidos(),
+    VendaService.faturamentoPorDia()
+  ])
+  res.json({ resumo, maisVendidos, faturamento })
 }

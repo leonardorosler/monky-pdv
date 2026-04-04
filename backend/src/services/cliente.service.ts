@@ -1,7 +1,11 @@
 import { prisma } from '../prisma.js'
 
-export async function listarClientes() {
-  return prisma.cliente.findMany()
+export async function listarClientes(nome?: string) {
+  return prisma.cliente.findMany({
+    where: nome ? {
+      nome: { contains: nome, mode: 'insensitive' }
+    } : undefined
+  })
 }
 
 export async function buscarCliente(id: number) {
@@ -9,16 +13,11 @@ export async function buscarCliente(id: number) {
 }
 
 export async function criarCliente(nome: string, email: string) {
-  return prisma.cliente.create({
-    data: { nome, email }
-  })
+  return prisma.cliente.create({ data: { nome, email } })
 }
 
 export async function atualizarCliente(id: number, dados: Partial<{ nome: string; email: string }>) {
-  return prisma.cliente.update({
-    where: { id },
-    data: dados
-  })
+  return prisma.cliente.update({ where: { id }, data: dados })
 }
 
 export async function deletarCliente(id: number) {

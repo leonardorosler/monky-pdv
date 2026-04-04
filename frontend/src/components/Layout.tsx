@@ -2,10 +2,11 @@ import { NavLink } from 'react-router-dom'
 import styles from './Layout.module.css'
 
 const navItems = [
-  { to: '/',         label: 'PDV',      icon: '⊡' },
-  { to: '/produtos', label: 'Produtos', icon: '◫' },
-  { to: '/clientes', label: 'Clientes', icon: '◉' },
-  { to: '/vendas',   label: 'Vendas',   icon: '≡' },
+  { to: '/',         label: 'Dashboard', icon: '▦' },
+  { to: '/pdv',      label: 'PDV',       icon: '⊡' },
+  { to: '/produtos', label: 'Produtos',  icon: '◫' },
+  { to: '/clientes', label: 'Clientes',  icon: '◉' },
+  { to: '/vendas',   label: 'Vendas',    icon: '≡' },
 ]
 
 export default function Layout({ children }: { children: React.ReactNode }) {

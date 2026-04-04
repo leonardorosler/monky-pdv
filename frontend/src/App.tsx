@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
+import Dashboard from './pages/Dashboard'
 import PDV from './pages/PDV'
 import Produtos from './pages/Produtos'
 import Clientes from './pages/Clientes'
@@ -10,7 +11,8 @@ export default function App() {
     <BrowserRouter>
       <Layout>
         <Routes>
-          <Route path="/" element={<PDV />} />
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/pdv" element={<PDV />} />
           <Route path="/produtos" element={<Produtos />} />
           <Route path="/clientes" element={<Clientes />} />
           <Route path="/vendas" element={<Vendas />} />
@@ -18,4 +20,4 @@ export default function App() {
       </Layout>
     </BrowserRouter>
   )
-} 
+}

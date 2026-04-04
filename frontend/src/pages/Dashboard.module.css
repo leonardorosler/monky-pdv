@@ -1,0 +1,146 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.body {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.card {
+  background: var(--bg-elevated);
+  border: 0.5px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.cardLabel {
+  font-size: 11px;
+  color: var(--text-hint);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 8px;
+}
+
+.cardValor {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.bloco {
+  background: var(--bg-elevated);
+  border: 0.5px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.blocoTitulo {
+  font-size: 11px;
+  color: var(--text-hint);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 16px;
+}
+
+.barras {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 160px;
+}
+
+.barraWrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.barraValor {
+  font-size: 10px;
+  color: var(--text-hint);
+  margin-bottom: 4px;
+  white-space: nowrap;
+}
+
+.barraContainer {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.barra {
+  width: 100%;
+  background: var(--accent);
+  border-radius: 3px 3px 0 0;
+  min-height: 2px;
+  opacity: 0.8;
+  transition: height 0.3s ease;
+}
+
+.barraDia {
+  font-size: 10px;
+  color: var(--text-hint);
+  margin-top: 6px;
+  text-align: center;
+}
+
+.rankItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.rankItem:last-child { border-bottom: none; }
+
+.rankPos {
+  width: 20px;
+  height: 20px;
+  background: var(--bg-hover);
+  border-radius: 4px;
+  font-size: 11px;
+  color: var(--text-hint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rankNome {
+  flex: 1;
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.rankQtd {
+  font-size: 12px;
+  color: var(--accent);
+}
+
+.vazio {
+  font-size: 12px;
+  color: var(--text-hint);
+  margin-top: 16px;
+}

@@ -2,7 +2,8 @@ import { Request, Response } from 'express'
 import * as ClienteService from '../services/cliente.service.js'
 
 export async function listar(req: Request, res: Response) {
-  const clientes = await ClienteService.listarClientes()
+  const nome = req.query.nome as string | undefined
+  const clientes = await ClienteService.listarClientes(nome)
   res.json(clientes)
 }
 
