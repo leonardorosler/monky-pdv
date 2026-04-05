@@ -48,3 +48,11 @@ model ItemVenda {
   produto    Produto @relation(fields: [produtoId], references: [id])
   produtoId  Int
 }
+
+model Usuario {
+  id        Int      @id @default(autoincrement())
+  nome      String
+  email     String   @unique
+  senha     String
+  criadoEm DateTime @default(now())
+}
