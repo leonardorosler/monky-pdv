@@ -1,8 +1,27 @@
 import axios from 'axios'
 
-// URL base da API — todas as chamadas vão usar esse prefixo
 const api = axios.create({
   baseURL: 'http://localhost:3333'
 })
+
+// Injeta o token automaticamente em todas as requisições
+api.interceptors.request.use(config => {
+  const token = localStorage.getItem('token')
+  if (token) config.headers.Authorization = `Bearer ${token}`
+  return config
+})
+
+// Se receber 401, limpa o token e recarrega a página
+api.interceptors.response.use(
+  res => res,
+  err => {
+    if (err.response?.status === 401) {
+      localStorage.removeItem('token')
+      localStorage.removeItem('usuario')
+      window.location.href = '/'
+    }
+    return Promise.reject(err)
+  }
+)
 
 export default api

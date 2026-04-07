@@ -9,7 +9,20 @@ const navItems = [
   { to: '/vendas',   label: 'Vendas',    icon: '≡' },
 ]
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+interface Props {
+  children: React.ReactNode
+  onLogout: () => void
+}
+
+export default function Layout({ children, onLogout }: Props) {
+  const usuario = JSON.parse(localStorage.getItem('usuario') ?? '{}')
+
+  function handleLogout() {
+    localStorage.removeItem('token')
+    localStorage.removeItem('usuario')
+    onLogout()
+  }
+
   return (
     <div className={styles.shell}>
       <aside className={styles.sidebar}>
@@ -32,6 +45,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </NavLink>
           ))}
         </nav>
+
+        {/* Usuário logado + logout */}
+        <div className={styles.userArea}>
+          <p className={styles.userName}>{usuario.nome}</p>
+          <button className={styles.btnLogout} onClick={handleLogout}>Sair</button>
+        </div>
       </aside>
       <main className={styles.main}>
         {children}
