@@ -30,6 +30,7 @@ Desenvolvido para estudo e portfólio durante o curso de ADS.
 - Cadastro e gestão de clientes
 - Histórico de vendas com detalhamento por item
 - API REST completa
+- Testes de funcionalidades com Jest
 
 ---
 
