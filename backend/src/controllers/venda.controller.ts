@@ -14,6 +14,9 @@ export async function buscar(req: Request, res: Response) {
 
 export async function criar(req: Request, res: Response) {
   const { itens, formaPagamento, clienteId } = req.body
+  if (!itens || itens.length === 0) {
+    return res.status(400).json({ erro: 'A venda precisa ter pelo menos um item' })
+  }
   const venda = await VendaService.criarVenda(itens, formaPagamento ?? 'dinheiro', clienteId)
   res.status(201).json(venda)
 }
